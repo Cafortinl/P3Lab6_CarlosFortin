@@ -8,10 +8,11 @@ using namespace std;
 class Numero{
     protected:
         string num;
+        int numero;
         string identificador;
+        void toDecimal();
+        Numero(string n, string i);
     public:
-        Numero(string n);
-        Numero &operator+(Numero);
         virtual string toString();
 };
 #endif
