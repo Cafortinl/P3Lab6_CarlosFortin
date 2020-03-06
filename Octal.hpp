@@ -10,9 +10,8 @@ using namespace std;
 
 class Octal: public Numero{
     public:
-        int num;
         Octal(string n, string i);
-        Octal &operator+(Octal n2);
+        /*Octal &operator+(Octal n2);
         Octal &operator+(Hexadecimal n2);
         Octal &operator+(Decimal n2);
         Octal &operator+(Binario n2);
@@ -23,8 +22,7 @@ class Octal: public Numero{
         Octal &operator*(Octal n2);
         Octal &operator*(Hexadecimal n2);
         Octal &operator*(Decimal n2);
-        Octal &operator*(Binario n2);
+        Octal &operator*(Binario n2);*/
         string toString();
-        int toDecimal(string n);
 };
 #endif
