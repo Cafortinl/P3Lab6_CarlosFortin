@@ -21,7 +21,7 @@ void Numero::toDecimal(){
             }
             t++;
         }
-    }else if(identificador == "0x"){
+    }else if(identificador == "0c"){
         int t = 0;
         string temp = num.substr(2, num.size()-1);
         for(int i = temp.size()-1;i>=0;i--){
@@ -29,7 +29,7 @@ void Numero::toDecimal(){
             t++;
         }
 
-    }else if(identificador == "0c"){
+    }else if(identificador == "0x"){
         int t = 0;
         string temp = num.substr(2, num.size()-1);
         for(int i = temp.size()-1;i>=0;i--){

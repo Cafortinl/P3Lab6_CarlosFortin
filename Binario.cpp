@@ -5,6 +5,7 @@
 #include "Hexadecimal.hpp"
 
 Binario::Binario(string n, string i) : Numero(n,i){
+    
 }
 
 string Binario::toString(){
