@@ -4,19 +4,18 @@
 #include "Octal.hpp"
 #include "Hexadecimal.hpp"
 
-Binario::Binario(string n, string i) : Numero(n,i){
+Hexadecimal::Hexadecimal(string n, string i) : Numero(n,i){
 }
 
-string Binario::toString(){
+string Hexadecimal::toString(){
     string temp;
-    int t = resul;
-    while(t >= 2){
-        if(t % 2 == 0)
+    while(resul >= 2){
+        if(resul % 2 == 0)
             temp += "0";
         else
             temp += "1";
-
-        t/=2;
+        
+        resul/=2;
     }
     return temp;
 }
