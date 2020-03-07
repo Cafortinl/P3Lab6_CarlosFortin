@@ -10,6 +10,7 @@
 using namespace std;
 
 vector<Numero> numeros;
+vector<string> ns;
 char idBin;
 string id;
 
@@ -18,7 +19,7 @@ void operaciones(int x){
         case 1:{
             int n1, n2;
             for(int i=0;i<numeros.size();i++){
-                cout << i << "-" << numeros[i].num << endl;
+                cout << i << "-" << ns[i] << endl;
             }
             cout << "Ingrese la posicion del primer numero: ";
             cin >> n1;
@@ -30,7 +31,7 @@ void operaciones(int x){
         case 2:{
             int n1, n2;
             for(int i=0;i<numeros.size();i++){
-                cout << i << "-" << numeros[i].num << endl;
+                cout << i << "-" << ns[i] << endl;
             }
             cout << "Ingrese la posicion del primer numero: ";
             cin >> n1;
@@ -43,7 +44,7 @@ void operaciones(int x){
         case 3:{
             int n1, n2;
             for(int i=0;i<numeros.size();i++){
-                cout << i << "-" << numeros[i].num << endl;
+                cout << i << "-" << ns[i] << endl;
             }
             cout << "Ingrese la posicion del primer numero: ";
             cin >> n1;
@@ -86,7 +87,7 @@ bool valido(string x){
             }
             if(bin){
                 v = true;
-                id = " ";
+                //id = " ";
             }
 
         }else if(id == "0c"){
@@ -117,26 +118,30 @@ void opciones(int x){
             if(idBin != 'x' && id == " "){
                 string s = numS.substr(0,numS.size()-2), i;
                 i[0] = idBin;
-                Binario b(s, i);
-                //numeros.push_back(b);
+                //Binario b(s, i);
+                numeros.push_back(Binario(s,i));
+                ns.push_back(numS);
             }else if(id == "0c"){
                 string s = numS.substr(2, numS.size()-1);
-                Octal o(s,id);
-                //numeros.push_back(o);
+                //Octal o(s,id);
+                numeros.push_back(Octal(s,numS.substr(0,1)));
+                ns.push_back(numS);
             }else if(id == "0x"){
                 string s = numS.substr(2, numS.size()-1);
-                Hexadecimal h(s,id);
-                //numeros.push_back(h);
+                //Hexadecimal h(s,id);
+                numeros.push_back(Hexadecimal(s,numS.substr(0,1)));
+                ns.push_back(numS);
             }else{
-                Decimal d(numS, id);
-                //numeros.push_back(d);
+                //Decimal d(numS, id);
+                numeros.push_back(Decimal(numS, numS.substr(0,1)));
+                ns.push_back(numS);
             }
             break;
         }
 
         case 2:{
             for(int i=0;i<numeros.size();i++){
-                cout << i << "-" << numeros[i].num << endl;
+                cout << i << "-" << ns[i] << endl;
             }
             break;
         }

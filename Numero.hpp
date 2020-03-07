@@ -11,7 +11,7 @@ class Numero{
         void toDecimal();
         Numero(string n, string i);
     public:
-        int numero, resul = 0;
+        int numero = 0, resul = 0;
         string num;
         virtual string toString();
         Numero operator+(Numero n2){

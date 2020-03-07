@@ -8,16 +8,20 @@ using namespace std;
 Numero::Numero(string n, string i){
     num = n;
     identificador = i;
+    //cout << identificador << endl;
     toDecimal();
+    //cout << "entro" << endl;
+    //cout << numero << endl;
 }
 
 void Numero::toDecimal(){
+    //cout << "entro 2"<<endl;
     if(identificador == "b"){
         int t = 0;
         string temp = num.substr(0, num.size()-2);
         for(int i = temp.size()-1;i>=0;i--){
             if(temp[i] == '1'){
-                numero+=pow(2,t);
+                numero+= 1*pow(2,t);
             }
             t++;
         }
@@ -25,7 +29,8 @@ void Numero::toDecimal(){
         int t = 0;
         string temp = num.substr(2, num.size()-1);
         for(int i = temp.size()-1;i>=0;i--){
-            numero+=pow(8,t) * temp[i];
+            cout << t<< endl;
+            numero+=1*pow(8,t) * (int)temp[i];
             t++;
         }
 
@@ -33,20 +38,21 @@ void Numero::toDecimal(){
         int t = 0;
         string temp = num.substr(2, num.size()-1);
         for(int i = temp.size()-1;i>=0;i--){
+            cout << t << endl;
             if(temp[i] == 'A')
-                numero+=pow(16,t) * 10;
+                numero+= 1*pow(16,t) * 10;
             else if(temp[i] == 'B')
-                numero+=pow(16,t) * 11;
+                numero+=1*pow(16,t) * 11;
             else if(temp[i] == 'C')
-                numero+=pow(16,t) * 12;
+                numero+=1*pow(16,t) * 12;
             else if(temp[i] == 'D')
-                numero+=pow(16,t) * 13;
+                numero+=1*pow(16,t) * 13;
             else if(temp[i] == 'E')
-                numero+=pow(16,t) * 14;
+                numero+=1*pow(16,t) * 14;
             else if(temp[i] == 'F')
-                numero+=pow(16,t) * 15;
+                numero+=1*pow(16,t) * 15;
             else
-                numero+=pow(16,t) * temp[i];
+                numero+=1*pow(16,t) * (int)temp[i];
             
             t++;
         }
