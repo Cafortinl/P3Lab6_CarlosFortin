@@ -10,31 +10,22 @@ class Numero{
         string identificador;
         void toDecimal();
         Numero(string n, string i);
-        int numero, resul;
-        string num;
     public:
-        virtual string toString() = 0;
-        /*virtual Numero* &operator+(Numero* n2) = 0;
-        virtual Numero* &operator-(Numero* n2) = 0;
-        virtual Numero* &operator*(Numero* n2) = 0;
-        void suma(Numero* n1, Numero* n2);
-        void resta(Numero* n1, Numero* n2);        
-        void multiplicacion(Numero* n1, Numero* n2);*/
+        int numero, resul = 0;
+        string num;
+        virtual string toString();
+        Numero operator+(Numero n2){
+            (*this).resul = (*this).numero + n2.numero;
+            (*this).toString();
+        };
+        Numero operator-(Numero n2){
+            (*this).resul = (*this).numero - n2.numero;
+            (*this).toString();
+        };
+        Numero operator*(Numero n2){
+            (*this).resul = (*this).numero * n2.numero;
+            (*this).toString();
+        };
+        
 };
 #endif
-
-/*
-Numero &operator+(Numero n2){
-    suma(*this, n2);    
-};
-Numero &operator-(Numero n2){
-    resta(*this, n2);
-};
-Numero &operator*(Numero n2){
-    multiplicacion(*this, n2);
-};
-void suma(Numero n1, Numero n2);
-void resta(Numero n1, Numero n2);        
-void multiplicacion(Numero n1, Numero n2);
-
-*/

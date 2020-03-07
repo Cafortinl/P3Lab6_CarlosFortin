@@ -55,20 +55,20 @@ void Numero::toDecimal(){
     }
 }
 
-/*void Numero::suma(Numero n1, Numero n2){
-    n1.resul = n1.numero + n2.numero;
-    cout << n1.resul << endl;
+/*int Numero::suma(int n1, int n2){
+    int r= n1 + n2;
+    return r;
     //n1.toString();
 }
 
-void Numero::resta(Numero* n1, Numero* n2){
-    n1.resul = n1.numero - n2.numero;
-    cout << n1.resul << endl;
+int Numero::resta(int n1, int n2){
+    int r= n1 + n2;
+    return r;
     //n1.toString();
 }
 
-void Numero::multiplicacion(Numero* n1, Numero* n2){
-    n1.resul = n1.numero * n2.numero;
-    cout << n1.resul << endl;
+int Numero::multiplicacion(int n1, int n2){
+    int r= n1 + n2;
+    return r;
     //n1.toString();
 }*/

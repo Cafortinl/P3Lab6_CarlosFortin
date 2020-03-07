@@ -9,10 +9,58 @@
 
 using namespace std;
 
-vector<Numero*> numeros;
-vector<string> numerosS;
+vector<Numero> numeros;
 char idBin;
 string id;
+
+void operaciones(int x){
+    switch(x){
+        case 1:{
+            int n1, n2;
+            for(int i=0;i<numeros.size();i++){
+                cout << i << "-" << numeros[i].num << endl;
+            }
+            cout << "Ingrese la posicion del primer numero: ";
+            cin >> n1;
+            cout << "Ingrese la posicion del segundo numero: ";
+            cin >> n2;
+            numeros[n1] + numeros[n2];
+        }
+
+        case 2:{
+            int n1, n2;
+            for(int i=0;i<numeros.size();i++){
+                cout << i << "-" << numeros[i].num << endl;
+            }
+            cout << "Ingrese la posicion del primer numero: ";
+            cin >> n1;
+            cout << "Ingrese la posicion del segundo numero: ";
+            cin >> n2;
+            numeros[n1] - numeros[n2];
+            break;
+        }
+
+        case 3:{
+            int n1, n2;
+            for(int i=0;i<numeros.size();i++){
+                cout << i << "-" << numeros[i].num << endl;
+            }
+            cout << "Ingrese la posicion del primer numero: ";
+            cin >> n1;
+            cout << "Ingrese la posicion del segundo numero: ";
+            cin >> n2;
+            numeros[n1] * numeros[n2];
+            break;
+        }
+    }
+}
+
+void mostrarOperaciones(){
+    cout << "----------Operaciones----------" << endl;
+    cout << "1. Suma" << endl;
+    cout << "2. Resta" << endl;
+    cout << "3. Multiplicacion" << endl;
+}
 
 bool valido(string x){
     bool v = false;
@@ -69,35 +117,35 @@ void opciones(int x){
             if(idBin != 'x' && id == " "){
                 string s = numS.substr(0,numS.size()-2), i;
                 i[0] = idBin;
-                //Binario b(s, i);
-                numeros.push_back(new Binario(s,i));
-                numerosS.push_back(numS);
+                Binario b(s, i);
+                //numeros.push_back(b);
             }else if(id == "0c"){
                 string s = numS.substr(2, numS.size()-1);
-                //Octal o(s,id);
-                numeros.push_back(new Octal(s,id));
-                numerosS.push_back(numS);
+                Octal o(s,id);
+                //numeros.push_back(o);
             }else if(id == "0x"){
                 string s = numS.substr(2, numS.size()-1);
-                //Hexadecimal h(s,id);
-                numeros.push_back(new Hexadecimal(s,id));
-                numerosS.push_back(numS);
+                Hexadecimal h(s,id);
+                //numeros.push_back(h);
             }else{
-                //Decimal d(numS, id);
-                numeros.push_back(new Decimal(numS, id));
-                numerosS.push_back(numS);
+                Decimal d(numS, id);
+                //numeros.push_back(d);
             }
             break;
         }
 
         case 2:{
             for(int i=0;i<numeros.size();i++){
-                cout << i << "-" << numerosS[i] << endl;
+                cout << i << "-" << numeros[i].num << endl;
             }
             break;
         }
 
         case 3:{
+            int o;
+            mostrarOperaciones();
+            cin >> o;
+            operaciones(o);
             break;
         }
         
@@ -130,3 +178,87 @@ int main(){
     cout << "Fin del programa" << endl;
     return 0;
 }
+
+/*
+if(nn.back() == 'b'){
+                string s = nn.substr(0,nn.size()-2), i;
+                i[0] = bin1;
+                Binario b(s, i);
+                if(nn2.back() == 'b'){
+                    string s = nn.substr(0,nn2.size()-2), i;
+                    i[0] = bin2;
+                    Binario b2(s, i);
+                    //b+b2;
+                }else if(iid2 == "0c"){
+                    string s = nn2.substr(2, nn2.size()-1);
+                    Octal o2(s,id);
+                    //b+o2;
+                }else if(iid2 == "0x"){
+                    string s = nn2.substr(2, nn2.size()-1);
+                    Hexadecimal h2(s,id);
+                    //b+h2;
+                }else{
+                    Decimal d2(nn2, id);
+                    //b+d2;
+                }
+            }else if(iid == "0c"){
+                string s = nn.substr(2, nn.size()-1);
+                Octal o(s,id);
+                if(bin2 == 'b'){
+                    string s = nn.substr(0,nn2.size()-2), i;
+                    i[0] = bin2;
+                    Binario b2(s, i);
+                    //o+b2;
+                }else if(iid2 == "0c"){
+                    string s = nn2.substr(2, nn2.size()-1);
+                    Octal o2(s,id);
+                    //o+o2;
+                }else if(iid2 == "0x"){
+                    string s = nn2.substr(2, nn2.size()-1);
+                    Hexadecimal h2(s,id);
+                    //o+h2;
+                }else{
+                    Decimal d2(nn2, id);
+                    //o+d2;
+                }
+            }else if(iid == "0x"){
+                string s = nn.substr(2, nn.size()-1);
+                Hexadecimal h(s,id);
+                if(bin2 == 'b'){
+                    string s = nn.substr(0,nn2.size()-2), i;
+                    i[0] = bin2;
+                    Binario b2(s, i);
+                    //h+b2;
+                }else if(iid2 == "0c"){
+                    string s = nn2.substr(2, nn2.size()-1);
+                    Octal o2(s,id);
+                    //h+o2;
+                }else if(iid2 == "0x"){
+                    string s = nn2.substr(2, nn2.size()-1);
+                    Hexadecimal h2(s,id);
+                    //h+h2;
+                }else{
+                    Decimal d2(nn2, id);
+                    //h+d2;
+                }
+            }else{
+                Decimal d(nn, id);
+                if(bin2 == 'b'){
+                    string s = nn.substr(0,nn2.size()-2), i;
+                    i[0] = bin2;
+                    Binario b2(s, i);
+                    //d+b2;
+                }else if(iid2 == "0c"){
+                    string s = nn2.substr(2, nn2.size()-1);
+                    Octal o2(s,id);
+                    //d+o2;
+                }else if(iid2 == "0x"){
+                    string s = nn2.substr(2, nn2.size()-1);
+                    Hexadecimal h2(s,id);
+                    d+h2;
+                }else{
+                    Decimal d2(nn2, id);
+                    d+d2;
+                }
+            }
+*/

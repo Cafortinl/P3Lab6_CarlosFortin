@@ -1,5 +1,8 @@
 #include "Decimal.hpp"
 #include "Numero.hpp"
+#include "Hexadecimal.hpp"
+#include "Binario.hpp"
+#include "Octal.hpp"
 #include <string>
 
 using namespace std;
@@ -12,20 +15,3 @@ string Decimal::toString(){
     temp = to_string(resul);
     return temp;
 }
-
-/*void Decimal::suma(int n1, int n2){
-    n1 = n1 + n2;
-    //n1.toString();
-}
-
-void Decimal::resta(int n1, int n2){
-    n1 = n1 - n2;
-    //cout << n1.resul << endl;
-    //n1.toString();
-}
-
-void Decimal::multiplicacion(int n1, int n2){
-    n1 = n1 * n2;
-    //cout << n1.resul << endl;
-    //n1.toString();
-}*/
