@@ -14,6 +14,12 @@ class Numero{
         string num;
     public:
         virtual string toString() = 0;
+        /*virtual Numero* &operator+(Numero* n2) = 0;
+        virtual Numero* &operator-(Numero* n2) = 0;
+        virtual Numero* &operator*(Numero* n2) = 0;
+        void suma(Numero* n1, Numero* n2);
+        void resta(Numero* n1, Numero* n2);        
+        void multiplicacion(Numero* n1, Numero* n2);*/
 };
 #endif
 

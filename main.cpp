@@ -10,6 +10,7 @@
 using namespace std;
 
 vector<Numero*> numeros;
+vector<string> numerosS;
 char idBin;
 string id;
 
@@ -70,24 +71,28 @@ void opciones(int x){
                 i[0] = idBin;
                 //Binario b(s, i);
                 numeros.push_back(new Binario(s,i));
+                numerosS.push_back(numS);
             }else if(id == "0c"){
                 string s = numS.substr(2, numS.size()-1);
                 //Octal o(s,id);
                 numeros.push_back(new Octal(s,id));
+                numerosS.push_back(numS);
             }else if(id == "0x"){
                 string s = numS.substr(2, numS.size()-1);
                 //Hexadecimal h(s,id);
                 numeros.push_back(new Hexadecimal(s,id));
+                numerosS.push_back(numS);
             }else{
                 //Decimal d(numS, id);
                 numeros.push_back(new Decimal(numS, id));
+                numerosS.push_back(numS);
             }
             break;
         }
 
         case 2:{
             for(int i=0;i<numeros.size();i++){
-                cout << i << "-" << numeros[i] << endl;
+                cout << i << "-" << numerosS[i] << endl;
             }
             break;
         }

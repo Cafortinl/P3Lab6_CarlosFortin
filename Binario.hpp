@@ -10,5 +10,6 @@ class Binario: public Numero{
     public:
         Binario(string n, string i);
         string toString();
+        
 };
 #endif

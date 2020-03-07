@@ -55,19 +55,19 @@ void Numero::toDecimal(){
     }
 }
 
-/*void suma(Numero n1, Numero n2){
+/*void Numero::suma(Numero n1, Numero n2){
     n1.resul = n1.numero + n2.numero;
     cout << n1.resul << endl;
     //n1.toString();
 }
 
-void resta(Numero n1, Numero n2){
+void Numero::resta(Numero* n1, Numero* n2){
     n1.resul = n1.numero - n2.numero;
     cout << n1.resul << endl;
     //n1.toString();
 }
 
-void multiplicacion(Numero n1, Numero n2){
+void Numero::multiplicacion(Numero* n1, Numero* n2){
     n1.resul = n1.numero * n2.numero;
     cout << n1.resul << endl;
     //n1.toString();
