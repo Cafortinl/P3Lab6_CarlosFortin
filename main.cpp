@@ -9,44 +9,46 @@
 
 using namespace std;
 
-vector<Numero> numeros;
+vector<Numero*> numeros;
 char idBin;
 string id;
 
 bool valido(string x){
     bool v = false;
     bool num = true;
-    idBin = x[x.size()-1];
+    idBin = x.size()-1;
     id = x.substr(0,1);
     for(int i = 0;i<x.size();i++){
-        if(x[i] != 'A' || x[i] != 'B' || x[i] != 'C' || x[i] != 'D' || x[i] != 'E' || x[i] != 'F' || x[i] != 'c' || x[i] != 'x' || x[i] != '0' || x[i] != '1' || x[i] != '2' || x[i] != '3' || x[i] != '4' || x[i] != '5' || x[i] != '6' || x[i] != '7' || x[i] != '8' || x[i] != '9'){
+        if(x[i] != 'A' && x[i] != 'B' && x[i] != 'C' && x[i] != 'D' && x[i] != 'E' && x[i] != 'F' && x[i] != 'c' && x[i] != 'x' && x[i] != '0' && x[i] != '1' && x[i] != '2' && x[i] != '3' && x[i] != '4' && x[i] != '5' && x[i] != '6' && x[i] != '7' && x[i] != '8' && x[i] != '9' && x[i] != 'b'){
             num = false;
+            //cout << "no valido" << endl;
             break;
         }
     }
     if(num){
         if(idBin == 'b'){
+            //cout << "entro" << endl;
             bool bin = true;
-            for(int j = 0;j<x.size()-1;j++){
-                if(x[j] != '0' || x[j] != '1'){
+            for(int j = 0;j<x.size()-2;j++){
+                if(x[j] != '0' && x[j] != '1'){
                     bin = false;
                     break;
                 }
-                if(bin){
-                    v = true;
-                    id = " ";
-                }
+            }
+            if(bin){
+                v = true;
+                id = " ";
             }
 
         }else if(id == "0c"){
             v = true;
-            idBin = ' ';
+            idBin = 'x';
         }else if(id == "0x"){
             v = true;
-            idBin = ' ';
+            idBin = 'x';
         }else{
             v = true;
-            idBin = ' ';
+            idBin = 'x';
         }
     }
     return v;
@@ -63,26 +65,30 @@ void opciones(int x){
                 cin >> numS;
                 valido(numS);
             }
-            if(idBin != ' '){
-                string s = numS.substr(0,numS.size()-2), i = to_string(idBin);
-                Binario b(s, i);
-                numeros.push_back(b);
+            if(idBin != 'x' && id == " "){
+                string s = numS.substr(0,numS.size()-2), i;
+                i[0] = idBin;
+                //Binario b(s, i);
+                numeros.push_back(new Binario(s,i));
             }else if(id == "0c"){
                 string s = numS.substr(2, numS.size()-1);
-                Octal o(s,id);
-                numeros.push_back(o);
+                //Octal o(s,id);
+                numeros.push_back(new Octal(s,id));
             }else if(id == "0x"){
                 string s = numS.substr(2, numS.size()-1);
-                Hexadecimal h(s,id);
-                numeros.push_back(h);
+                //Hexadecimal h(s,id);
+                numeros.push_back(new Hexadecimal(s,id));
             }else{
-                Decimal d(numS, id);
-                numeros.push_back(d);
+                //Decimal d(numS, id);
+                numeros.push_back(new Decimal(numS, id));
             }
             break;
         }
 
         case 2:{
+            for(int i=0;i<numeros.size();i++){
+                cout << i << "-" << numeros[i] << endl;
+            }
             break;
         }
 
@@ -106,7 +112,7 @@ void mostrarOpciones(){
     cout << "1. Ingresar Numero" << endl;
     cout << "2. Listar Numeros" << endl;
     cout << "3. Operacion" << endl;
-    cout << "0. Salir";
+    cout << "0. Salir" << endl;
 }
 
 int main(){
@@ -114,6 +120,7 @@ int main(){
     do{
         mostrarOpciones();
         cin >> opcion;
+        opciones(opcion);
     }while(opcion != 0);
     cout << "Fin del programa" << endl;
     return 0;

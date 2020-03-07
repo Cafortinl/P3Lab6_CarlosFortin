@@ -55,7 +55,7 @@ void Numero::toDecimal(){
     }
 }
 
-void suma(Numero n1, Numero n2){
+/*void suma(Numero n1, Numero n2){
     n1.resul = n1.numero + n2.numero;
     cout << n1.resul << endl;
     //n1.toString();
@@ -71,4 +71,4 @@ void multiplicacion(Numero n1, Numero n2){
     n1.resul = n1.numero * n2.numero;
     cout << n1.resul << endl;
     //n1.toString();
-}
+}*/

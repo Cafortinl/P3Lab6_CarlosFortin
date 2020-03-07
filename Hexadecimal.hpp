@@ -2,8 +2,6 @@
 #ifndef HEXADECIMAL_HPP
 #define HEXADECIMAL_HPP
 #include "Numero.hpp"
-#include "Binario.hpp"
-#include "Octal.hpp"
 #include <string>
 
 using namespace std;

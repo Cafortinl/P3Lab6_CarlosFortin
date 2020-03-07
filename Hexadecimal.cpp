@@ -1,8 +1,8 @@
 #include "Numero.hpp"
-#include "Binario.hpp"
-#include "Decimal.hpp"
-#include "Octal.hpp"
 #include "Hexadecimal.hpp"
+#include <string>
+
+using namespace std;
 
 Hexadecimal::Hexadecimal(string n, string i) : Numero(n,i){
 }

@@ -1,11 +1,13 @@
 #include "Numero.hpp"
 #include "Binario.hpp"
-#include "Decimal.hpp"
-#include "Octal.hpp"
-#include "Hexadecimal.hpp"
+#include <string>
+//#include "Decimal.hpp"
+//#include "Octal.hpp"
+//#include "Hexadecimal.hpp"
+
+using namespace std;
 
 Binario::Binario(string n, string i) : Numero(n,i){
-    
 }
 
 string Binario::toString(){

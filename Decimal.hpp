@@ -2,9 +2,6 @@
 #ifndef DECIMAL_HPP
 #define DECIMAL_HPP
 #include "Numero.hpp"
-#include "Hexadecimal.hpp"
-#include "Octal.hpp"
-#include "Binario.hpp"
 #include <string>
 
 using namespace std;

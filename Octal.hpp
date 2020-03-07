@@ -2,8 +2,6 @@
 #ifndef OCTAL_HPP
 #define OCTAL_HPP
 #include "Numero.hpp"
-#include "Binario.hpp"
-#include "Hexadecimal.hpp"
 #include <string>
 
 using namespace std;
